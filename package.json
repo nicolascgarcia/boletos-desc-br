@@ -1,0 +1,22 @@
+{
+  "name": "boletos-desc-br",
+  "version": "1.0.0",
+  "description": "Obtenha informacoes sobre o boleto a partir de seu codigo de barras.",
+  "main": "src/boleto.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolascgarcia/boletos-desc-br.git"
+  },
+  "keywords": [
+    "boletos"
+  ],
+  "author": "Nicolas Carvalho Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicolascgarcia/boletos-desc-br/issues"
+  },
+  "homepage": "https://github.com/nicolascgarcia/boletos-desc-br#readme"
+}

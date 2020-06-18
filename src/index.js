@@ -1,18 +1,18 @@
 //============= Identificar tipo de código do boleto =============
 
 exports.identificarTipoCodigo = (codigo) => {
-    codigo = codigo.replace(/[^0-9]/g, '');
-  
-    if (typeof codigo !== 'string') throw new TypeError('Insira uma string válida!');
-  
-    if (codigo.length == 44) {
+  codigo = codigo.replace(/[^0-9]/g, '');
+
+  if (typeof codigo !== 'string') throw new TypeError('Insira uma string válida!');
+
+  if (codigo.length == 44) {
       return 'CODIGO_DE_BARRAS'
-    } else if (codigo.length == 46 || codigo.length == 47 || codigo.length == 48) {
+  } else if (codigo.length == 46 || codigo.length == 47 || codigo.length == 48) {
       return 'LINHA_DIGITAVEL'
-    } else {
+  } else {
       return 'TAMANHO_INCORRETO';
-    }
   }
+}
   
   //==================================================================
   // ============= Identificar o tipo de boleto inserido =============

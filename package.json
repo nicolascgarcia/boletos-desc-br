@@ -11,10 +11,27 @@
     "url": "git+https://github.com/nicolascgarcia/boletos-desc-br.git"
   },
   "keywords": [
-    "boletos"
+    "boleto",
+    "boletos",
+    "conta",
+    "convenio",
+    "arrecadacao",
+    "linha",
+    "digitavel",
+    "javascript",
+    "banco",
+    "bancario",
+    "brasil",
+    "brazil",
+    "modulo10",
+    "modulo11",
+    "validador",
+    "validator",
+    "codigo",
+    "barras"
   ],
   "author": "Nicolas Carvalho Garcia",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nicolascgarcia/boletos-desc-br/issues"
   },

@@ -3,7 +3,7 @@ const validacao = require('./validacao')
 
 // ============= Fazer validação do boleto =============
 
-exports.validarBoleto = (codigo) => {
+exports.dadosBoleto = (codigo) => {
   let retorno = {};
   codigo = codigo.replace(/[^0-9]/g, '');
 
@@ -61,7 +61,7 @@ exports.validarBoleto = (codigo) => {
   return retorno;
 }
 
-exports.boleto = (codigo, validarBlocos = false) => {
+exports.validarBoleto = (codigo, validarBlocos = false) => {
   const cod = validacao.limpacod(codigo);
   if (Number(cod[0]) === 8) return validacao.boletoArrecadacao(cod, validarBlocos);
   return validacao.boletoBancario(cod, validarBlocos);

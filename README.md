@@ -1,4 +1,26 @@
-# boletos-desc-br
+<p align="center">
+  <img src="https://static.blog.vhsys.com.br/wp-content/uploads/2013/05/boleto.png" width="200">
+</p>
+
+<h1 align=center>boletos-desc-br<h1>
+<p align="center">
+  <a href="https://www.npmjs.com/package/boletos-desc-br">
+    <img src="https://img.shields.io/npm/v/boletos-desc-br.svg" alt="npm version">
+  </a>
+  <a href="https://www.npmjs.com/package/boletos-desc-br">
+    <img src="https://img.shields.io/npm/dm/boletos-desc-br.svg" alt="npm downloads">
+  </a>
+  <a href="https://www.npmjs.com/package/boletos-desc-br">
+    <img src="https://img.shields.io/bundlephobia/min/boletos-desc-br.svg" alt="minified size">
+  </a>
+  <a href="https://github.com/nicolascgarcia/boletos-desc-br/blob/master/LICENSE">
+    <img src="https://img.shields.io/npm/l/boletos-desc-br.svg" alt="license">
+  </a>
+  <a href="https://github.com/nicolascgarcia/boletos-desc-br/issues">
+    <img src="https://img.shields.io/github/issues/nicolascgarcia/boletos-desc-br.svg" alt="issues">
+  </a>
+  </p>
+
 
 Este módulo tem como objetivo obter dados informativos e validação de boletos de qualquer tipo, seja a partir do código de barras ou linha digitável, não havendo a necessidade de tratar o código antes de utilizar uma das funções.
 

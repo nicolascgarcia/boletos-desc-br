@@ -96,14 +96,14 @@ function boletoBancarioLinhaDigitavel(codigo, validarBlocos = false) {
         },
     ];
     const validBlocos = validarBlocos ? blocos.every(e => modulo10(e.num) === Number(e.DV)) : true;
-    const validDV = this.boletoBancarioCodigoBarras(this.convertToBoletoBancarioCodigoBarras(cod));
+    const validDV = boletoBancarioCodigoBarras(convertToBoletoBancarioCodigoBarras(cod));
     return validBlocos && validDV;
 }
 
 function boletoBancario(codigo, validarBlocos = false) {
     const cod = clearMask(codigo);
-    if (cod.length === 44) return this.boletoBancarioCodigoBarras(cod);
-    if (cod.length === 47) return this.boletoBancarioLinhaDigitavel(codigo, validarBlocos);
+    if (cod.length === 44) return boletoBancarioCodigoBarras(cod);
+    if (cod.length === 47) return boletoBancarioLinhaDigitavel(codigo, validarBlocos);
     return false;
 }
 
@@ -123,7 +123,7 @@ function boletoArrecadacaoCodigoBarras(codigo) {
 function boletoArrecadacaoLinhaDigitavel(codigo, validarBlocos = false) {
     const cod = clearMask(codigo);
     if (!/^[0-9]{48}$/.test(cod) || Number(cod[0]) !== 8) return false;
-    const validDV = boletoArrecadacaoCodigoBarras(this.convertToBoletoArrecadacaoCodigoBarras(cod));
+    const validDV = boletoArrecadacaoCodigoBarras(convertToBoletoArrecadacaoCodigoBarras(cod));
     if (!validarBlocos) return validDV;
     const codigoMoeda = Number(cod[2]);
     let modulo;
@@ -151,17 +151,4 @@ function boletoArrecadacao(codigo, validarBlocos = false) {
     return false;
 }
 
-module.exports = {
-    clearMask,
-    modulo10,
-    modulo11Arrecadacao,
-    modulo11Bancario,
-    convertToBoletoArrecadacaoCodigoBarras,
-    convertToBoletoBancarioCodigoBarras,
-    boletoBancarioCodigoBarras,
-    boletoBancarioLinhaDigitavel,
-    boletoBancario,
-    boletoArrecadacaoCodigoBarras,
-    boletoArrecadacaoLinhaDigitavel,
-    boletoArrecadacao
-}
+module.exports = {clearMask, modulo10, modulo11Arrecadacao, modulo11Bancario, convertToBoletoArrecadacaoCodigoBarras, convertToBoletoBancarioCodigoBarras, boletoBancarioCodigoBarras, boletoBancarioLinhaDigitavel, boletoBancario, boletoArrecadacaoCodigoBarras, boletoArrecadacaoLinhaDigitavel, boletoArrecadacao}

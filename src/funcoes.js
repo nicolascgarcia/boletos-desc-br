@@ -102,21 +102,29 @@ function identificarData(codigo, tipoCodigo) {
     if (tipoCodigo === 'CODIGO_DE_BARRAS') {
         if (tipoBoleto == 'BANCO') {
             fatorData = codigo.substr(5, 4)
+
+            dataBoleto.setDate(dataBoleto.getDate() + Number(fatorData));
+            dataBoleto.setTime(dataBoleto.getTime() + dataBoleto.getTimezoneOffset() - (3) * 60 * 60 * 1000);
+
+            return dataBoleto;
         } else {
-            fatorData = '0';
+            dataBoleto = tipoBoleto
+
+            return dataBoleto;
         }
     } else if (tipoCodigo === 'LINHA_DIGITAVEL') {
         if (tipoBoleto == 'BANCO') {
             fatorData = codigo.substr(33, 4)
+            dataBoleto.setDate(dataBoleto.getDate() + Number(fatorData));
+            dataBoleto.setTime(dataBoleto.getTime() + dataBoleto.getTimezoneOffset() - (3) * 60 * 60 * 1000);
+
+            return dataBoleto;
         } else {
-            fatorData = '0';
+            dataBoleto = tipoBoleto
+
+            return dataBoleto;
         }
     }
-
-    dataBoleto.setDate(dataBoleto.getDate() + Number(fatorData));
-    dataBoleto.setTime(dataBoleto.getTime() + dataBoleto.getTimezoneOffset() - (3) * 60 * 60 * 1000);
-
-    return dataBoleto;
 }
 
 //==============================================================================

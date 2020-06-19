@@ -1,4 +1,4 @@
-function clearMask(codigo) {
+function limpacod(codigo) {
     return codigo.replace(/( |\.|-)/g, '');
 }
 
@@ -47,7 +47,7 @@ function modulo11Arrecadacao(bloco) {
 }
 
 function convertToBoletoArrecadacaoCodigoBarras(codigo) {
-    const cod = clearMask(codigo);
+    const cod = limpacod(codigo);
     let codigoBarras = '';
     for (let index = 0; index < 4; index++) {
         const start = (11 * (index)) + index;
@@ -58,7 +58,7 @@ function convertToBoletoArrecadacaoCodigoBarras(codigo) {
 }
 
 function convertToBoletoBancarioCodigoBarras(codigo) {
-    const cod = clearMask(codigo);
+    const cod = limpacod(codigo);
     let codigoBarras = '';
     codigoBarras += cod.substring(0, 3); // Identificação do banco
     codigoBarras += cod.substring(3, 4); // Código da moeda
@@ -72,7 +72,7 @@ function convertToBoletoBancarioCodigoBarras(codigo) {
 }
 
 function boletoBancarioCodigoBarras(codigo) {
-    const cod = clearMask(codigo);
+    const cod = limpacod(codigo);
     if (!/^[0-9]{44}$/.test(cod)) return false;
     const DV = cod[4];
     const bloco = cod.substring(0, 4) + cod.substring(5);
@@ -80,7 +80,7 @@ function boletoBancarioCodigoBarras(codigo) {
 }
 
 function boletoBancarioLinhaDigitavel(codigo, validarBlocos = false) {
-    const cod = clearMask(codigo);
+    const cod = limpacod(codigo);
     if (!/^[0-9]{47}$/.test(cod)) return false;
     const blocos = [{
             num: cod.substring(0, 9),
@@ -101,14 +101,14 @@ function boletoBancarioLinhaDigitavel(codigo, validarBlocos = false) {
 }
 
 function boletoBancario(codigo, validarBlocos = false) {
-    const cod = clearMask(codigo);
+    const cod = limpacod(codigo);
     if (cod.length === 44) return boletoBancarioCodigoBarras(cod);
     if (cod.length === 47) return boletoBancarioLinhaDigitavel(codigo, validarBlocos);
     return false;
 }
 
 function boletoArrecadacaoCodigoBarras(codigo) {
-    const cod = clearMask(codigo);
+    const cod = limpacod(codigo);
     if (!/^[0-9]{44}$/.test(cod) || Number(cod[0]) !== 8) return false;
     const codigoMoeda = Number(cod[2]);
     const DV = Number(cod[3]);
@@ -121,7 +121,7 @@ function boletoArrecadacaoCodigoBarras(codigo) {
 }
 
 function boletoArrecadacaoLinhaDigitavel(codigo, validarBlocos = false) {
-    const cod = clearMask(codigo);
+    const cod = limpacod(codigo);
     if (!/^[0-9]{48}$/.test(cod) || Number(cod[0]) !== 8) return false;
     const validDV = boletoArrecadacaoCodigoBarras(convertToBoletoArrecadacaoCodigoBarras(cod));
     if (!validarBlocos) return validDV;
@@ -145,10 +145,10 @@ function boletoArrecadacaoLinhaDigitavel(codigo, validarBlocos = false) {
 }
 
 function boletoArrecadacao(codigo, validarBlocos = false) {
-    const cod = clearMask(codigo);
+    const cod = limpacod(codigo);
     if (cod.length === 44) return boletoArrecadacaoCodigoBarras(cod);
     if (cod.length === 48) return boletoArrecadacaoLinhaDigitavel(codigo, validarBlocos);
     return false;
 }
 
-module.exports = {clearMask, modulo10, modulo11Arrecadacao, modulo11Bancario, convertToBoletoArrecadacaoCodigoBarras, convertToBoletoBancarioCodigoBarras, boletoBancarioCodigoBarras, boletoBancarioLinhaDigitavel, boletoBancario, boletoArrecadacaoCodigoBarras, boletoArrecadacaoLinhaDigitavel, boletoArrecadacao}
+module.exports = {limpacod, modulo10, modulo11Arrecadacao, modulo11Bancario, convertToBoletoArrecadacaoCodigoBarras, convertToBoletoBancarioCodigoBarras, boletoBancarioCodigoBarras, boletoBancarioLinhaDigitavel, boletoBancario, boletoArrecadacaoCodigoBarras, boletoArrecadacaoLinhaDigitavel, boletoArrecadacao}

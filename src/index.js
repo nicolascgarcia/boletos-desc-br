@@ -62,7 +62,7 @@ exports.validarBoleto = (codigo) => {
 }
 
 exports.boleto = (codigo, validarBlocos = false) => {
-  const cod = validacao.clearMask(codigo);
+  const cod = validacao.limpacod(codigo);
   if (Number(cod[0]) === 8) return validacao.boletoArrecadacao(cod, validarBlocos);
   return validacao.boletoBancario(cod, validarBlocos);
 }

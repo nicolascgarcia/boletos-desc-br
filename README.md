@@ -37,6 +37,9 @@ boletofunc.validarBoleto('536200000005 667800481000 180975657313 001589636081') 
 
 ## Obtendo os Dados do Boleto (Qualquer tipo de boleto)
 
+Nesta função é retornado diversos dados do boleto a partir do código de barras ou linha digitável. 
+PS: Os boleto de arrecadações (como água, luz, prefeitura etc) não são possíveis detectar o vencimento, portanto é retornado o tipo do boleto.
+
 ```sh
 const boletofunc = require('boletos-desc-br')
 

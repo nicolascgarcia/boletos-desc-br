@@ -21,8 +21,7 @@
   </a>
   </p>
 
-
-Este módulo tem como objetivo obter dados informativos e validação de boletos de qualquer tipo, seja a partir do código de barras ou linha digitável, não havendo a necessidade de tratar o código antes de utilizar uma das funções.
+<p>Este módulo tem como objetivo obter dados informativos e validação de boletos de qualquer tipo, seja a partir do código de barras ou linha digitável, não havendo a necessidade de tratar o código antes de utilizar uma das funções.<p>
 
 # Instalação
 

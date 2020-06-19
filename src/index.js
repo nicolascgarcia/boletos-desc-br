@@ -1,18 +1,13 @@
 const funcoes = require('./funcoes')
 const validacao = require('./validacao')
 
-// ============= Fazer validação do boleto =============
-
+// ============= Obter dados do boleto =============
 exports.dadosBoleto = (codigo) => {
   let retorno = {};
   codigo = codigo.replace(/[^0-9]/g, '');
 
   let tipoCodigo = funcoes.identificarTipoCodigo(codigo);
 
-  /** 
-   * Boletos de cartão de crédito geralmente possuem 46 dígitos. É necessário adicionar mais um zero no final, para formar 47 caracteres 
-   * Alguns boletos de cartão de crédito do Itaú possuem 36 dígitos. É necessário acrescentar 11 zeros no final.
-   */
   if (codigo.length == 36) {
     codigo = codigo + '00000000000';
   } else if (codigo.length == 46) {
@@ -61,6 +56,7 @@ exports.dadosBoleto = (codigo) => {
   return retorno;
 }
 
+// ============= Fazer validação do boleto =============
 exports.validarBoleto = (codigo, validarBlocos = false) => {
   const cod = validacao.limpacod(codigo);
   if (Number(cod[0]) === 8) return validacao.boletoArrecadacao(cod, validarBlocos);

@@ -151,4 +151,17 @@ function boletoArrecadacao(codigo, validarBlocos = false) {
     return false;
 }
 
-module.exports = {limpacod, modulo10, modulo11Arrecadacao, modulo11Bancario, convertToBoletoArrecadacaoCodigoBarras, convertToBoletoBancarioCodigoBarras, boletoBancarioCodigoBarras, boletoBancarioLinhaDigitavel, boletoBancario, boletoArrecadacaoCodigoBarras, boletoArrecadacaoLinhaDigitavel, boletoArrecadacao}
+module.exports = {
+    limpacod,
+    modulo10,
+    modulo11Arrecadacao,
+    modulo11Bancario,
+    convertToBoletoArrecadacaoCodigoBarras,
+    convertToBoletoBancarioCodigoBarras,
+    boletoBancarioCodigoBarras,
+    boletoBancarioLinhaDigitavel,
+    boletoBancario,
+    boletoArrecadacaoCodigoBarras,
+    boletoArrecadacaoLinhaDigitavel,
+    boletoArrecadacao
+}

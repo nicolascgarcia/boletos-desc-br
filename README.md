@@ -2,7 +2,7 @@
   <img src="https://static.blog.vhsys.com.br/wp-content/uploads/2013/05/boleto.png" width="200">
 </p>
 
-<h1 align=center>boletos-desc-br<h1>
+<h1 align=center>boletos-desc-br</h1>
 <p align="center">
   <a href="https://www.npmjs.com/package/boletos-desc-br">
     <img src="https://img.shields.io/npm/v/boletos-desc-br.svg" alt="npm version">

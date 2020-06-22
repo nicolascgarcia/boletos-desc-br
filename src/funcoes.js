@@ -109,7 +109,7 @@ function identificarData(codigo, tipoCodigo) {
 
             return dataBoletoform;
         } else {
-            dataBoleto = "invalido"
+            dataBoleto = null
 
             return dataBoleto;
         }
@@ -122,7 +122,7 @@ function identificarData(codigo, tipoCodigo) {
 
             return dataBoletoform;
         } else {
-            dataBoleto = "invalido"
+            dataBoleto = null
 
             return dataBoleto;
         }

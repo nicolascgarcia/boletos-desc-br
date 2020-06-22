@@ -1,6 +1,6 @@
 {
   "name": "boletos-desc-br",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Obtenha informacoes sobre o boleto a partir de seu codigo de barras.",
   "main": "./src/index.js",
   "scripts": {

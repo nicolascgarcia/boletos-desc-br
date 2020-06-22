@@ -105,7 +105,7 @@ function identificarData(codigo, tipoCodigo) {
 
             dataBoleto.setDate(dataBoleto.getDate() + Number(fatorData));
             dataBoleto.setTime(dataBoleto.getTime() + dataBoleto.getTimezoneOffset() - (3) * 60 * 60 * 1000);
-            var dataBoletoform = dataBoleto.getDate() + "/" + dataBoleto.getMonth() + "/" + dataBoleto.getFullYear()
+            var dataBoletoform = dataBoleto.getDate() + "/" + (dataBoleto.getMonth() + 1) + "/" + dataBoleto.getFullYear()
 
             return dataBoletoform;
         } else {
